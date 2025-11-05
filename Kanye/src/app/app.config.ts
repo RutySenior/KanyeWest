@@ -1,12 +1,8 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { Routes } from '@angular/router';
+import { AlbumList } from './components/album-list/album-list';
+import { AlbumDetail } from './components/album-detail/album-detail';
 
-import { routes } from './app.routes';
-
-export const appConfig: ApplicationConfig = {
-  providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes)
-  ]
-};
+export const appRoutes: Routes = [
+  { path: '', component: AlbumList },
+  { path: 'album/:id', component: AlbumDetail },
+];
